@@ -1,5 +1,6 @@
 \documentclass[11pt]{article}
-\usepackage{fullpage,amsthm,amsfonts,amssymb,epsfig,amsmath,times,amsthm}
+\usepackage{fullpage,amsthm,amsfonts,amssymb,epsfig,amsmath,times,amsthm,array}
+\newcolumntype{C}{>$c<$}
 \usepackage[shortlabels]{enumitem}
 \usepackage{mathtools}
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
@@ -7,7 +8,7 @@
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{claim}[theorem]{Claim}
-
+\newtheorem*{claim*}{Claim}
 
 \begin{document}
 
@@ -56,5 +57,42 @@ Let $A$ be the set $\{x, y, z\}$ and $B$ be the set $\{x, y\}$.
 \end{enumerate}
 
 \subsection*{0.4}
-If $A$ has $a$ elements, and $B$ has $b$ elements, how many elements are in $A \times B$
+If $A$ has $a$ elements, and $B$ has $b$ elements, how many elements are in $A \times B$? Explain your answer.\\
+\begin{claim*}
+$|A \times B| = a \cdot b$ 
+\end{claim*}
+\begin{proof}
+This is because we assign every element of the set $A$ to every element in the set $B$. That means, each element in the set $A$, such as $A_i$, has $b$ pairings made. Thus, if there are $b$ pairings made with every element in $A$, then there are $a$ pairings, each of size $b$, which yields $a \cdot b$ number of pairings made. 
+\end{proof}
+
+\subsection*{0.5}
+If $C$ is a set with $c$ elements, how many elements are in the power set of $C$? Explain your answer.\\
+\\
+First, we will define the power set of $C$ as $P_C$. 
+\begin{claim*}
+$|P_C| = 2^{c}$
+\end{claim*}
+\begin{proof}
+
+\end{proof}
+
+\subsection*{0.6}
+Let X be the set $\{1, 2, 3, 4, 5\}$ and $Y$ be the set $\{6, 7, 8, 9, 10\}$. The unary function $f: X \rightarrow Y$ and the binary function $g: X \times Y \rightarrow Y$ are described.
+
+\begin{enumerate}[a.]
+\item 7
+\item $D: X$, $R: Y$
+\item 5
+\item $D: X \times Y$, $R: Y$
+\item 8
+\end{enumerate}
+
+\subsection*{0.7}
+For each part, give a relation that satisfies the condition.
+\begin{enumerate}[a.]
+\item 
+\end{enumerate}
+
+
+
 \end{document}
