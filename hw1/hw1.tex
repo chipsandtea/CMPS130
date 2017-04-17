@@ -118,6 +118,96 @@ Write a formal description of the following graph.
 \begin{center} \includegraphics[width=6cm,height=6cm,keepaspectratio]{exer09} \end{center}
 \{\{1, 2, 3, 4, 5, 6\}, \{(1, 4), (1, 5), (1, 6), (2, 4), (2, 5), (2, 6), (3, 4), (3, 5), (3, 6)\}\}
 
-\section{Problems page 27 in 2nd ed 0.10 through 0.12}
+\section{Problems page 27 in 3rd ed 0.10, 0.12 and 0.13.}
+\subsection*{0.10}
+\begin{enumerate}
+\item $a = b$
+\item $a^2 = ab$
+\item $a^2 - a^b = ab - b^2$
+\item $\frac{(a + b)(a - b)}{(a - b)} = \frac{b(a - b)}{(a - b)}$
+\item $a + b = b$
+\end{enumerate}
+\begin{claim*} Step 4 is invalid in the case where $a = b = 1$. \end{claim*}
+\begin{proof} If $a = b = 1$, that means the term $(a - b) = 0$. This means that (4) is dividing by $0$, an impossible operation. Thus, this is not a proof that $2 = 1$. \end{proof}
 
+\subsection*{0.12}
+\begin{claim*} This proof falls apart because it assumes the truth of $k = 2$. \end{claim*}
+\begin{proof}
+This proof relies heavily on the "middle" set $H_1$, which contains all $k-$horses except the first and the last. However, at just $k = 2$, where the only horses are the first and the last, this "middle" argument falls apart completely. The proof must first establish this base case of $k = 2$ first, before proceeding to larger $k$ values.
+\end{proof}
+
+\subsection*{0.13}
+Show that every graph with two or more nodes contains two nodes that have equal degrees.\\
+We will prove this via Proof by Contradiction.
+\begin{proof}
+Assume some graph $G = (V, E)$, such that all degrees of nodes in $V$ are distinct. Thus, the set of all possible degrees is $D = \{0, 1, 2, ... , n -1\}$. This means that there is some node $V_i$ with degree $D_i = 0$, and some node $V_j$ with degree $D_j = n-1$. However, $D_i = 0$ implies that there are no edges leaving this node, but $D_j$ implies that node $V_j$ is connected to every node in $G$, other than itself. This is a contradiction of our initial assumption. $\therefore$ there are at least two nodes $\{V_i, V_j\}$ s.t. $D_i = D_j$.
+\end{proof}
+
+\section{Prove from the definitions of set union, intersection, complement and equality that:}
+\begin{equation}
+\overline{(A \cap B)} = (\bar{A} \cup \bar{B})
+\end{equation}
+
+\begin{claim*} $\overline{(A \cap B)} \implies (\bar{A} \cup \bar{B})$ \end{claim*}
+\begin{proof}
+Consider some $x \in \overline{(A \cap B)}$.
+\begin{enumerate}[(1)]
+\item $x \notin (A \cap B)$
+\item $x \in \bar{A} \wedge x \in \bar{B}$
+\item $x \notin A \wedge x \notin B$
+\item $x \in (\bar{A} \cup \bar{B})$
+\end{enumerate}
+\end{proof}
+
+\begin{claim*} $(\bar{A} \cup \bar{B}) \implies \overline{(A \cap B)}$ \end{claim*}
+\begin{proof}
+Consider some $x \in (\overline{A} \cup \overline{B})$.
+\begin{enumerate}[(1)]
+\item $x \in \overline{A} \lor x \in \overline{B}$
+\item $x \notin A \lor x \notin B$
+\item $x \in (\overline{A \cap B})$
+\end{enumerate}
+\end{proof}
+
+Thus, we can see that $\overline{(A \cap B)} = (\bar{A} \cup \bar{B})$.
+
+\section{Show the set of odd numbers is countable.}
+The set of odd integers is a subset of the integers (which are countable), it is as most countable.
+
+\section{Prove by induction on $n$.}
+\subsection*{Base Case:}
+Show that $n = 1$ is true.
+\begin{enumerate}
+\item $i^2 = \frac{n(n+1)(2n+1)}{6}$
+\item $1^2 = \frac{1(1+1)(2(1)+1)}{6}$
+\item $1 = \frac{(1)(2)(3)}{6}$
+\item $1 = 1$
+\end{enumerate}
+
+\subsection*{Inductive Hypothesis:}
+\begin{equation}
+\text{Assume that} \sum^{k}_{i=1}{i^2} = \frac{k(k+1)(2k+1)}{6} \text{for some} k \in \mathbb{N}
+\end{equation}
+\subsection*{Inductive Step:}
+\begin{claim} If $n = k$ is true, then $n = k + 1$ is also true. \end{claim}
+\begin{proof}
+For $n = k + 1$, the summation is:
+\begin{equation}
+\sum^{k + 1}_{i = 1}{i^2}
+\end{equation}
+Using our inductive hypothesis, we can rewrite this as:
+\begin{equation}
+\sum^{k}_{i = 1}{i^2} + (k + 1)^2 = \frac{k(k+1)(2k+1)}{6} + (k+1)^2
+\end{equation}
+\begin{itemize}
+\item $\frac{1}{6}(k + 1)k(2k + 1) + (k + 1)(k + 1)$
+\item $\frac{1}{6}(k + 1)[k(2k + 1) + 6k + 6]$
+\item $\frac{1}{6}(k + 1) [2k^2 + 7k + 6]$
+\item $\frac{1}{6}(k + 1) [2k(k + 2) + 3(k + 2)]$
+\item $\frac{1}{6}(k + 1)(k + 2)[2k + 3]$
+\item $\frac{(k + 1)((k + 1) + 1)(2(k + 1) + 1)}{6}$
+\end{itemize}
+
+Which is proof for $n = k + 1$ being true assuming $n = k$. Thus, by proof of induction the statement is true.
+\end{proof}
 \end{document}
