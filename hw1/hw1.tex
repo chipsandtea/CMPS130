@@ -1,8 +1,9 @@
 \documentclass[11pt]{article}
-\usepackage{fullpage,amsthm,amsfonts,amssymb,epsfig,amsmath,times,amsthm,array}
+\usepackage{fullpage,amsthm,amsfonts,amssymb,epsfig,amsmath,times,amsthm,array,graphicx}
 \newcolumntype{C}{>$c<$}
 \usepackage[shortlabels]{enumitem}
 \usepackage{mathtools}
+\graphicspath{ {images/} }
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
@@ -81,18 +82,42 @@ Let X be the set $\{1, 2, 3, 4, 5\}$ and $Y$ be the set $\{6, 7, 8, 9, 10\}$. Th
 
 \begin{enumerate}[a.]
 \item 7
-\item $D: X$, $R: Y$
-\item 5
-\item $D: X \times Y$, $R: Y$
+\item $D: [6,7]$, $R: [1,5]$
+\item 6
+\item $D: [6,10]$, $R: [1,5]$
 \item 8
 \end{enumerate}
 
 \subsection*{0.7}
-For each part, give a relation that satisfies the condition.
+For each part, give a relation that satisfies the condition. Let A = \{x, y, z\}.
 \begin{enumerate}[a.]
-\item 
+\item Reflexive, Symmetric, but not Transitive. \\
+Let $R$ = \{(x, x), (y, y), (z, z), (x, y), (y, x), (y, z), (z, y)\}\\
+$R$ is reflexive, since (x, x), (y, y), (z, z) $\in R$.\\
+$R$ is symmetric, since (x, y), (y, x), (y, z), (z, y) $\in R$.\\
+$R$ is not transitive, since (x, y) (y, z) $\in R$, but (x, z) $\notin R$.
+\item Reflexive, Transitive, but not Symmetric. \\
+Let $R$ = \{(x, x), (y, y), (z, z), (x, y), (y, z), (x, z)\}\\
+$R$ is reflexive, since (x, x), (y, y), (z, z) $\in R$.\\
+$R$ is transitive, since (x, y), (y, z), (x, z) $\in R$, where (x, y) and (y, z) $\implies$ (x, z)\\
+$R$ is not symmetric, since (x, y), (y, z), (x, z) $\in R$, but (y, x), (z, y), (z, x) $\notin R$.
+\item Symmetric, Transitive, but not Reflexive.\\
+Let $R$ = \{(x, y), (y, x), (y, z), (z, y), (x, z), (z, x)\}\\
+$R$ is symmetric, since (x, y), (y, x), (y, z), (x, z), (z, x) $\in R$.\\
+$R$ is transitive, since (x, y), (y, z), (z, x) $\in R$, where (x, y) and (y, z) $\implies$ (z, x).\\
+$R$ is not reflexive, since (x, x), (y, y), (z, z) $\notin R$.
 \end{enumerate}
 
+\subsection*{0.8}
+Consider the undirected graph $G=(V,E) where V$ , the set of nodes, is \{1, 2, 3, 4\} and $E$, the set of edges, is \{\{1, 2\}, \{2, 3\}, \{1, 3\}, \{2, 4\}, \{1, 4\}\}. Draw the graph $G$. What are the degrees of each node? Indicate a path from node 3 tonode 4 on your drawing of $G$.\\
+\begin{center} \includegraphics[width=10cm,height=10cm,keepaspectratio]{exer08} \end{center}
 
+\pagebreak
+\subsection*{0.9}
+Write a formal description of the following graph.
+\begin{center} \includegraphics[width=6cm,height=6cm,keepaspectratio]{exer09} \end{center}
+\{\{1, 2, 3, 4, 5, 6\}, \{(1, 4), (1, 5), (1, 6), (2, 4), (2, 5), (2, 6), (3, 4), (3, 5), (3, 6)\}\}
+
+\section{Problems page 27 in 2nd ed 0.10 through 0.12}
 
 \end{document}
